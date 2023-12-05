@@ -31,7 +31,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['pp4-network-blog.herokuapp.com', '8000-etherealshe-pp4networkb-zn0tdct4f9w.ws-eu106.gitpod.io', 'localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [
