@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pp4-network-blog-45c9aa617027.herokuapp.com', '8000-etherealshe-pp4networkb-zn0tdct4f9w.ws-eu106.gitpod.io', 'localhost']
+ALLOWED_HOSTS = ['pp4-network-blog-45c9aa617027.herokuapp.com', '8000-etherealshe-pp4networkb-dwivu90u3p0.ws-eu106.gitpod.io', 'localhost']
 
 # Application definition
 
