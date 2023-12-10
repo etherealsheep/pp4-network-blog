@@ -1,5 +1,5 @@
 body {
-    background-color: #23BBBB;
+    background-color: #blue;
 }
 
 .brand {
@@ -14,7 +14,7 @@ body {
 }
 
 .thin {
-    font-weight: 600;
+    font-weight: 300;
 }
 
 .light-bg {
