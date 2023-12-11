@@ -16,11 +16,11 @@ body {
 
 #logo {
     color: blue
-    letter-spacing: 2px;
+    letter-spacing 2px;
 }
 
 #logo:hover {
-    color: #fff;
+    color: cornflowerblue;
 }
 
 h2, h3, h4 {
@@ -46,6 +46,7 @@ h2, h3, h4 {
 
 .navbar-dark .navbar-nav .nav-link:hover {
     color: cornflowerblue;
+    font-weight: bold;
 }
 
 #search-bar > .btn {
