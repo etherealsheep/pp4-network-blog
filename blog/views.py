@@ -1,13 +1,13 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
-from .forms import CommentForm, ContactForm
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from .models import Post
+from .forms import PostForm, CommentForm, ContactForm
 
 
 class PostList(generic.ListView):
-    """This view is used to dispaly the home page"""
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
@@ -15,7 +15,6 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
-    """This view is used to display the full Post, including comments and likes. It also includes a comment for to add a comment."""
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -69,7 +68,6 @@ class PostDetail(View):
 
 
 class PostLike(View):
-    """This view is used to add like to the Post."""
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -94,3 +92,30 @@ def contact(request):
     form = ContactForm()
     context = {'form': form}
     return render(request, 'contact.html', context)
+
+
+@login_required
+def add_post(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only admin can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added post!')
+            return redirect('home')
+        else:
+            messages.error(request,
+                           'Failed to add post. '
+                           'Please ensure the form is valid.')
+    else:
+        form = PostForm()
+
+    template = 'add_post.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
