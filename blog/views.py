@@ -82,6 +82,22 @@ def about(request):
     return render(request, 'about.html')
 
 
+def search(request):
+    if request.method == "POST":
+        searched = request.POST.get('searched', None)
+        results = Post.objects.filter(title__icontains=searched)
+        return render(
+            request,
+            'search.html',
+            {
+                'searched': searched,
+                'results': results
+            }
+        )
+    else:
+        return render(request, 'search.html')
+
+
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)

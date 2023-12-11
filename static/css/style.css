@@ -1,33 +1,94 @@
+/* General Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
 body {
-    background-color: #F9FAFC;
-}
-
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
-}
-
-.red-o {
-    color: #E84610;
-}
-
-.thin {
     font-weight: 300;
-}
-
-.light-bg {
     background-color: #fff;
+    padding-top: 80px;
 }
 
-.dark-bg {
-    background-color: #445261;
+/* Logo and Headings */
+
+#logo {
+    color: blue
+    letter-spacing: 2px;
 }
 
-.main-bg {
-    background-color: #F9FAFC;
+#logo:hover {
+    color: #fff;
 }
+
+h2, h3, h4 {
+    text-transform: uppercase;
+}
+
+@media (max-width: 308px) {
+    #logo {
+        font-size: 98%;
+    }
+}
+
+/* Navigation */
+
+.navbar {
+    min-height: 80px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: cornflowerblue;
+}
+
+#search-bar > .btn {
+    color: #fff;
+    border-color: cornflowerblue;
+}
+
+#search-bar > .btn:hover {
+    color: black;
+    background-color: cornflowerblue;
+}
+
+@media (max-width: 308px) {
+    .navbar-toggler {
+        font-size: 90%;
+    }
+}
+
+/* Parallax Image Section */
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* Intro Section */
+
+#logo-intro {
+    color: cornflowerblue;
+    letter-spacing: 2px;
+    text-transform: none;
+}
+
+@media (max-width: 375px) {
+    #logo-intro {
+        display: block;
+    }
+}
+
+/* Blog Posts Section */
 
 .card {
     border: none;
@@ -43,57 +104,34 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #23BBBB;
+    background-color: cornflowerblue;
 }
 
 .author {
-    color: white;
+    color: black;
     margin: 4px;
     text-transform: uppercase;
 }
 
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
-
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: black;
 }
 
-.post-link:hover,
+.post-link:hover {
+    text-decoration: underline;
+    color: black;
+}
+
 .page-link {
-    color: #E84610;
+    color: #fff;
+    background-color: #212529;
+    border: solid 1px cornflowerblue;
+}
+
+.page-link:hover {
+    color: cornflowerblue;
+    background-color: #212529;
 }
 
 .post-title {
@@ -106,25 +144,46 @@ body {
     color: lightgray;
 }
 
-.btn-signup {
-    background-color: #23BBBB;
-    color: #fff;
+/* Post Detail Section */
+
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;
 }
 
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+@media (max-width: 767px) {
+    .masthead {
+        height: 400px;
+    }
+}
+
+.masthead-text {
+    background-color: #212529;
+    color: white;
+    position: relative;
+}
+
+.masthead-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.masthead-image > img {
+    width: 100%;
 }
 
 .link {
-    color: #23BBBB;
+    color: cornflowerblue;
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: cornflowerblue;
     text-decoration: underline;
 }
 
@@ -139,4 +198,99 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+} 
+
+.btn-comment {
+    margin-top: 5px;
+}
+
+/* Footer Section */
+
+#footer {
+    width:100%;
+    background-color: #212529;
+}
+
+/* Social Media Links */
+
+.social-links > li {
+    display: inline;
+}
+
+.social-links i {
+    color: #fff;
+    font-size: 150%;
+    margin: 0 1%;
+}
+
+.social-links i:hover {
+    color: cornflowerblue;
+}
+
+/* About Us, Login Page, Register Page, Sign Out Page, Contact Us Page, Add/Edit Post, Error Page */
+
+#about-us, #no-result, #contact-us, #contact-success, #edit-post, #error-page {
+    margin: 0 auto;
+}
+
+#about-us, #login-page, #register-page, #sign-out, #no-result, #contact-us, #contact-success, #edit-post, #error-page {
+    background-color: #212529;
+    color: #fff;
+    border-radius: 25px;
+    width: 800px;
+    max-width: 80%;
+    padding: 25px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#edit-post {
+    width: 1000px;
+}
+
+@media (min-height: 820px) {
+    #about-us, #login-page, #register-page {
+        margin-top: 205px;
+        margin-bottom: 205px;
+    }
+
+    #no-result {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        margin-top: 120px;
+        margin-bottom: 120px;
+    }
+
+    #sign-out, #contact-success, #error-page {
+        padding-top: 55px;
+        padding-bottom: 55px;
+        margin-top: 255px;
+        margin-bottom: 255px;
+    }
+}
+
+.btn-signup {
+    color: #fff;
+    background-color: cornflowerblue;
+}
+
+.btn-signup:hover, .btn-signup:active {
+    color: black;
+}
+
+/* Search Page */
+
+#search-results {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.search-text {
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+.result-text {
+    margin: 50px auto;
 }

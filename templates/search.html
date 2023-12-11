@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Start of Search Section -->
+<section id="search-results">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-3 text-center">
+                <h2>Search Results</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-3 text-center">
+                <!-- Return searched input from user -->
+                <p>You searched for <span class="search-text">{{ searched }}</span></p>
+            </div>
+        </div>
+        <!-- If statement to return recipe results which match to input from user -->
+        {% if results %}
+        <div class="row">
+            <div class="col-12 mt-3 left">
+                <div class="row"> 
+                    {% for post in results %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    {% if "placeholder" in post.featured_image.url %}
+                                    <img class="card-img-top"
+                                        src="" alt="{{ post.title }}">
+                                    {% else %}
+                                    <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                                    {% endif %}
+                                    <div class="image-flash">
+                                        <p class="author">Author: {{ post.author }}</p>
+                                    </div>
+                                </div>
+                                <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                    <h2 class="card-title">{{ post.title }}</h2>
+                                    <p class="card-text">{{ post.excerpt }}</p>
+                                </a>
+                                <hr />
+                                <p class="card-text text-muted h6">
+                                    {{ post.created_on}} 
+                                    <i class="far fa-heart"></i>
+                                    {{ post.number_of_likes }}
+                                    {% if request.user.is_superuser %}
+                                        <small class="ml-3">
+                                            <a href="{% url 'edit_post' post.slug %}">Edit</a> | 
+                                            <a class="text-danger" href="{% url 'delete_post' post.slug %}">Delete</a>
+                                        </small>
+                                    {% endif %}
+                                </p> 
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- Return else statement if no search results location -->
+        {% else %}
+        <div id="no-result">
+            <div class="row">
+                <div class="col-md-12 mt-3 text-center">
+                    <h4 class="result-text">Oops! No results found!</h4>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+<!-- End of Search Section -->
+{% endblock %}
