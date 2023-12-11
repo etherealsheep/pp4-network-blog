@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- Start of Contact Section -->
+<section id="contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mt-3 offset-md-2">
+                <h2>Contact Us</h2>
+                <p>
+                    Question? Feedback? Let me know by filling out the below form!
+                </p>
+            </div>
+        </div>
+        <!-- Contact Form -->
+        <div class="row">
+            <div class="col-md-8 mt-3 offset-md-2">
+                <form method="POST" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-signup right mt-4" type="submit">Send &raquo;</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Contact Section -->
+{% endblock %}

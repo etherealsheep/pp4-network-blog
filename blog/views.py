@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, ContactForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -82,3 +82,15 @@ class PostLike(View):
 
 def about(request):
     return render(request, 'about.html')
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'contact_success.html')
+
+    form = ContactForm()
+    context = {'form': form}
+    return render(request, 'contact.html', context)
