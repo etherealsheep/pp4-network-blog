@@ -3,7 +3,6 @@
 <html lang="en">
 <head>
     {% block meta %}
-    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +13,7 @@
     {% block extra_meta %}
     {% endblock %}
     {% block corecss %} 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon.png' %}">
-    <!-- Stylesheets -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
@@ -27,19 +24,15 @@
     {% block extra_css %}
     {% endblock %}      
     {% block corejs %} 
-    <!-- Core JS Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="{% static 'js/script.js' %}"></script>
     {% endblock %}
     {% block extra_js %}
     {% endblock %}
-    <!-- Title -->
     <title>Network Blog</title>
 </head>
 <body class="d-flex flex-column h-100 main-bg">
-    <!-- Please note code was used from the Code Institute I Think Therefore I Blog tutorial to help create this project -->
     <header>
-        <!-- Start of Navigation -->
         <nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}">
@@ -85,8 +78,6 @@
                 </div>
             </div>
         </nav>
-        <!-- End of Navigation -->
-        <!-- Start of Alerts Section -->
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -99,18 +90,12 @@
                 </div>
             </div>
         </div>
-        <!-- End of Alerts Section -->
     </header>
-    <!-- Start of Main Content Section -->
     <main class="flex-shrink-0 main-bg">
         {% block content %}
-        <!-- Content Goes here -->
         {% endblock content %}
     </main>
-    <!-- End of Main Content Section -->
-    <!-- Start of Footer -->
     <footer id="footer" class="py-3">
-        <!-- Social Media Links -->
         <div>
             <ul class="social-links p-0 text-center">
                 <li>
@@ -127,13 +112,17 @@
                 </li>
             </ul>
         </div>
-        <!-- Copyright Text -->
         <div id="coypright">
             <p class="m-0 text-center text-white">&copy; Copyright Network Blog 2023</p>
         </div>
     </footer>
-    <!-- End of Footer -->
-    <!--Postload JS Scripts-->
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2000);
+    </script>
     {% block postloadjs %}
     {% endblock %}
 </body>
