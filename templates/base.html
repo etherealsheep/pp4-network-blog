@@ -1,106 +1,140 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html class="h-100" lang="en">
-
+<html lang="en">
 <head>
     {% block meta %}
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Networki Blog is a blog about network engineering!">
+    <meta name="description" content="Network Blog">
     <meta name="keywords" content="network, networking, blog, eigrp, ospg, is-is, bgp, design, wireless, vpn, mpls">
     <meta name="author" content="Giovanni Perrotta">
     {% endblock %}
-    {% block corecss %}
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    {% block extra_meta %}
+    {% endblock %}
+    {% block corecss %} 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon.png' %}">
+    <!-- Stylesheets -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endblock %}
-    {% block corejs %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
+    {% block extra_css %}
+    {% endblock %}      
+    {% block corejs %} 
+    <!-- Core JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="{% static 'js/script.js' %}"></script>
     {% endblock %}
+    {% block extra_js %}
+    {% endblock %}
+    <!-- Title -->
     <title>Network Blog</title>
 </head>
-
 <body class="d-flex flex-column h-100 main-bg">
-
-    <!-- Navigation -->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">NETWORK blog</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
-
-                </ul>
-                <span class="navbar-text text-muted">
-                    Diary of a Network Engineer
-                </span>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                    {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                    </button>
+    <!-- Please note code was used from the Code Institute: "I Think Therefore I Blog" tutorial to help creating this project -->
+    <header>
+        <!-- Start of Navigation -->
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <h1 id="logo">Network Blog</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}">About</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Add Post</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Contact Us</a>
+                        </li>
+                    </ul>
+                    <form id="search-bar" name="recipe-form" class="d-flex" method="POST" action="">
+                        {% csrf_token %}
+                        <input class="form-control me-2" type="search" placeholder="Search Post" aria-label="Search" name="searched" pattern=".{2,}" title="Please enter minimum of 2 characters" required>
+                        <button class="btn" type="submit">Search</button>
+                    </form>
                 </div>
-                {% endfor %}
+            </div>
+        </nav>
+        <!-- End of Navigation -->
+        <!-- Start of Alerts Section -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
-
+        <!-- End of Alerts Section -->
+    </header>
+    <!-- Start of Main Content Section -->
     <main class="flex-shrink-0 main-bg">
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
     </main>
-
-    <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Made by Me</p>
-        <p class="m-0 text-center text-white">Follow Me: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i></p>
+    <!-- End of Main Content Section -->
+    <!-- Start of Footer -->
+    <footer id="footer" class="py-3">
+        <!-- Social Media Links -->
+        <div>
+            <ul class="social-links p-0 text-center">
+                <li>
+                    <a href="https://www.youtube.com" target="_blank" aria-label="Visit our YouTube page (link opens in a new tab)" rel="noopener"><i class="fab fa-youtube"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Visit our Instagram page (links opens in a new tab)" rel="noopener"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Visit our Facebook page (link opens in a new tab)" rel="noopener"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Visit our Twitter page (link opens in a new tab)" rel="noopener"><i class="fab fa-twitter"></i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- Copyright Text -->
+        <div id="coypright">
+            <p class="m-0 text-center text-white">&copy; Copyright Network Blog 2023</p>
+        </div>
     </footer>
-    <script>
-        setTimeout(function() {
-            let messages = document.getElementById("msg");
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
-        }, 3000);
-    </script>
+    <!-- End of Footer -->
+    <!--Postload JS Scripts-->
+    {% block postloadjs %}
+    {% endblock %}
 </body>
-
 </html>
