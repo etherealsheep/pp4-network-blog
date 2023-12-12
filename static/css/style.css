@@ -7,6 +7,7 @@
 }
 
 body {
+    font-family: "Lato", sans-serif;
     font-weight: 300;
     background-color: #fff;
     padding-top: 80px;
@@ -15,21 +16,19 @@ body {
 /* Logo and Headings */
 
 #logo {
-    color: blue
-    letter-spacing 2px;
-}
-
-#logo:hover {
+    font-family: "Roboto", sans-serif;
     color: cornflowerblue;
+    font-weight: bold;
 }
 
 h2, h3, h4 {
+    font-family: "Lato", sans-serif;
     text-transform: uppercase;
 }
 
-@media (max-width: 308px) {
+@media (max-width: 430px) {
     #logo {
-        font-size: 98%;
+        font-size: 90%;
     }
 }
 
@@ -59,23 +58,9 @@ h2, h3, h4 {
     background-color: cornflowerblue;
 }
 
-@media (max-width: 308px) {
+@media (max-width: 430px) {
     .navbar-toggler {
-        font-size: 90%;
-    }
-}
-
-/* Intro Section */
-
-#logo-intro {
-    color: cornflowerblue;
-    letter-spacing: 2px;
-    text-transform: none;
-}
-
-@media (max-width: 375px) {
-    #logo-intro {
-        display: block;
+        font-size: 85%;
     }
 }
 
@@ -133,6 +118,12 @@ h2, h3, h4 {
 .post-subtitle {
     margin-left: 5%;
     color: lightgray;
+}
+
+@media (min-width:0px) and (max-width:430px) {
+    .card-img-top {
+        display: none;
+    }
 }
 
 /* Post Detail Section */
@@ -277,6 +268,7 @@ h2, h3, h4 {
 }
 
 .search-text {
+    font-family: "Roboto", sans-serif;
     text-decoration: underline;
     text-transform: uppercase;
     font-size: 1.2em;
