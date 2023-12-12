@@ -70,9 +70,9 @@
                             <a class="nav-link" href="{% url 'contact' %}">Contact Me</a>
                         </li>
                     </ul>
-                    <form id="search-bar" name="recipe-form" class="d-flex" method="POST" action="{% url 'search' %}">
+                    <form id="search-bar" name="post-form" class="d-flex" method="POST" action="{% url 'search' %}">
                         {% csrf_token %}
-                        <input class="form-control me-2" type="search" placeholder="Search Recipe" aria-label="Search" name="searched" pattern=".{2,}" title="Please enter minimum of 2 characters" required>
+                        <input class="form-control me-2" type="search" placeholder="Search Post" aria-label="Search" name="searched" pattern=".{2,}" title="Please enter minimum of 2 characters" required>
                         <button class="btn" type="submit">Search</button>
                     </form>
                 </div>
