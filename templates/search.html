@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-<!-- Start of Search Section -->
 <section id="search-results">
     <div class="container">
         <div class="row">
@@ -12,25 +11,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 mt-3 text-center">
-                <!-- Return searched input from user -->
                 <p>You searched for <span class="search-text">{{ searched }}</span></p>
             </div>
         </div>
-        <!-- If statement to return post results which match to input from user -->
         {% if results %}
         <div class="row">
             <div class="col-12 mt-3 left">
-                <div class="row"> 
+                <div class="row">
                     {% for post in results %}
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body">
                                 <div class="image-container">
                                     {% if "placeholder" in post.featured_image.url %}
-                                    <img class="card-img-top"
-                                        src="" alt="{{ post.title }}">
+                                    <img class="card-img-top" src="" alt="{{ post.title }}">
                                     {% else %}
-                                    <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                                    <img class="card-img-top" src=" {{ post.featured_image.url }}"
+                                        alt="{{ post.title }}">
                                     {% endif %}
                                     <div class="image-flash">
                                         <p class="author">Author: {{ post.author }}</p>
@@ -42,16 +39,16 @@
                                 </a>
                                 <hr />
                                 <p class="card-text text-muted h6">
-                                    {{ post.created_on}} 
+                                    {{ post.created_on}}
                                     <i class="far fa-heart"></i>
                                     {{ post.number_of_likes }}
                                     {% if request.user.is_superuser %}
-                                        <small class="ml-3">
-                                            <a href="{% url 'edit_post' post.slug %}">Edit</a> | 
-                                            <a class="text-danger" href="{% url 'delete_post' post.slug %}">Delete</a>
-                                        </small>
+                                    <small class="ml-3">
+                                        <a href="{% url 'edit_post' post.slug %}">Edit</a> |
+                                        <a class="text-danger" href="{% url 'delete_post' post.slug %}">Delete</a>
+                                    </small>
                                     {% endif %}
-                                </p> 
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -59,7 +56,6 @@
                 </div>
             </div>
         </div>
-        <!-- Return else statement if no search results location -->
         {% else %}
         <div id="no-result">
             <div class="row">
@@ -71,5 +67,4 @@
         {% endif %}
     </div>
 </section>
-<!-- End of Search Section -->
 {% endblock %}

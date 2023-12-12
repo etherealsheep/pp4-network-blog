@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<!-- Start of Add Post Section -->
 <section id="edit-post">
     <div class="container">
         <div class="row">
@@ -10,7 +9,6 @@
                 <p>Please use form in desktop mode</p>
             </div>
         </div>
-        <!-- Form to Add Post -->
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">
                 <form method="POST" action="{% url 'add_post' %}" class="form mb-2" enctype="multipart/form-data">
@@ -31,9 +29,7 @@
         </div>
     </div>
 </section>
-<!-- End of Add Post Section -->
 {% endblock %}
-<!-- Javascript -->
 {% block postloadjs %}
 {{ block.super }}
 <script>
