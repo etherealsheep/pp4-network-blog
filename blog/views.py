@@ -6,8 +6,13 @@ from django.contrib.auth.decorators import login_required
 from .models import Post
 from .forms import PostForm, CommentForm, ContactForm
 
+"""
+Note: the code has been used from the CI tutorial I Think Therefore I Blog
+to help the setup and creation of this project.
+"""
 
 class PostList(generic.ListView):
+    """ view for the post list """
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
@@ -15,6 +20,7 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
+    """ view for the post detail """
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -68,6 +74,7 @@ class PostDetail(View):
 
 
 class PostLike(View):
+    """ view for the post likes """
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -79,10 +86,12 @@ class PostLike(View):
 
 
 def about(request):
+    """ view to return the about me page """
     return render(request, 'about.html')
 
 
 def search(request):
+    """ view to return the search page """
     if request.method == "POST":
         searched = request.POST.get('searched', None)
         results = Post.objects.filter(title__icontains=searched)
@@ -99,6 +108,7 @@ def search(request):
 
 
 def contact(request):
+    """ view to return contact page """
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -112,6 +122,7 @@ def contact(request):
 
 @login_required
 def add_post(request):
+    """ add post """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only admin can do that.')
         return redirect(reverse('home'))
@@ -139,6 +150,7 @@ def add_post(request):
 
 @login_required
 def edit_post(request, slug, *args, **kwargs):
+    """ edit post """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only admin can do that.')
         return redirect(reverse('home'))
@@ -171,6 +183,7 @@ def edit_post(request, slug, *args, **kwargs):
 
 @login_required
 def delete_post(request, slug, *args, **kwargs):
+    """ delete post """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only admin can do that.')
         return redirect(reverse('home'))
