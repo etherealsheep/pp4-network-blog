@@ -3,10 +3,9 @@ from .models import Post, Comment, Contact
 from django_summernote.admin import SummernoteModelAdmin
 
 
-"""
-Note: the code has been used from the CI tutorial I Think Therefore I Blog
-to help the setup and creation of this project.
-"""
+# Note: the code has been used from the CI tutorial
+# I Think Therefore I Blog
+# to help the setup and creation of this project.
 
 
 @admin.register(Post)
@@ -21,13 +20,13 @@ class PostAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    
+
     list_display = ('name', 'body', 'post', 'created_on', 'approved')
     list_filter = ('approved', 'created_on')
     search_fields = ('name', 'email', 'body')
     actions = ['approve_comments']
 
-    def approve_comments(self, request, queryset):
+    def approve_comments(self, queryset):
         queryset.update(approved=True)
 
 

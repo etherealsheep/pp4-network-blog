@@ -8,7 +8,7 @@ class TestModels(TestCase):
     def test_post_status_defaults_to_draft(self):
         user = User.objects.create(username='testname')
         recipe = Post.objects.create(
-            title='recipe1',
+            title='post',
             author=user
         )
         self.assertFalse(recipe.status)
@@ -16,19 +16,19 @@ class TestModels(TestCase):
     def test_comment_approved_defaults_to_false(self):
         user = User.objects.create(username='testname')
         recipe = Post.objects.create(
-            title='recipe1',
+            title='post',
             author=user
         )
         comment = Comment.objects.create(
             post=recipe,
-            body='recipe comment',
+            body='post comment',
         )
         self.assertFalse(comment.approved)
 
     def test_post_string_method_returns_title(self):
         user = User.objects.create(username='testname')
         recipe = Post.objects.create(
-            title='recipe1',
+            title='post',
             author=user
         )
         self.assertEqual(str(recipe), 'recipe1')
@@ -36,12 +36,12 @@ class TestModels(TestCase):
     def test_comment_string_method_returns_comment(self):
         user = User.objects.create(username='testname')
         recipe = Post.objects.create(
-            title='recipe1',
+            title='post',
             author=user
         )
         comment = Comment.objects.create(
             post=recipe,
             name=user,
-            body='recipe comment',
+            body='post comment',
         )
-        self.assertEqual(str(comment), 'Comment recipe comment by testname')
+        self.assertEqual(str(comment), 'Comment post by testname')
