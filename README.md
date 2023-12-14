@@ -461,3 +461,41 @@ The following user stories have been achieved from this section:
 * As a Site User I can leave comments on a post so that I can be involved in the conversation
 * As a Site User/Admin I can view comments on an individual post so that I can read the conversation
 * As a Site User/Admin I can view the number of likes on each post so that I can see which is the most popular or viral
+
+Users are also able to utilise the search functionality on the website. This feature is accessed from the navigation bar located on the right-hand side.
+
+![](docs/images/usertest-search.png)
+
+The user is able to enter a keyword corresponding to the desired post they would like to locate in the input box. Once this has been filled out, the user can click the submit button which will take them to the Search page. Users cannot submit a blank form as this field is required, in addition there is a requirement of minimun of 2 characters to be added before the form can be submitted.
+
+![](docs/images/usertest-search2.png)
+
+For the search results sections, the user is presented with the keyword searched and below that any successful returns of the keyword will display the posts which match this. The post results are displayed in the same manner as the blog posts on the Home page. The user is able to click on the post post which will take them to the post detail page for that post.
+
+![](docs/images/usertest-search3.png)
+
+Any unsuccessful matches to the user's search will be displayed with a message to say so.
+
+![](docs/images/usertest-search4.png)
+
+The following user stories have been achieved from this section:
+
+* As a Site User I can search keywords for specific posts
+
+From the navigation, the user is able to select the 'Contact Me' link. Selecting this link will direct the user to the contact page.
+
+![](docs/images/usertest-contact.png)
+
+From the contact page, the user is presented with a form to fill out to be able to submit the query, this includes the user's email address, subject and main message. These are required fields to enter for the user to be able to submit the form.
+
+![](docs/images/usertest-contact2.png)
+
+Once the form is submitted via the 'Send' button, the user is directed to the confirmation page to indicate successful submission of the query.
+
+![](docs/images/usertest-contact3.png)
+
+The side admin will then be able to view the contact messages in the admin only section of the website.
+
+The following user stories have been achieved from this section:
+
+* As a Site User I can contact the site owner regarding any feedback or queries
