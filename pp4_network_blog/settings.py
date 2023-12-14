@@ -106,7 +106,7 @@ WSGI_APPLICATION = 'pp4_network_blog.wsgi.application'
 # dbsqlite3 database was used for testing purposes only when DEVELOPMENT=True
 # If statement allows for switching between databases when testing
 
-DEVELOPMENT = True
+DEVELOPMENT = False
 
 if DEVELOPMENT:
     DATABASES = {
