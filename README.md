@@ -396,3 +396,68 @@ Selecting the About Me button from the navigation will take the user to the Abou
 The following user stories have been achieved from this section:
 
 * As a Site User I can learn more about the site the purpose of the web app.
+
+Selecting the Sign Up button from the navigation will take the user to the Sign Up page. This page can also be accessed by clicking the links available on the Login page. The page shows the Sign Up section, any existing users with an account are prompted to go to the login page provided from the link. Any new users are prompted to enter the required details to be able to sign up. The fields username, password and password (again) are required fields, therefore the user cannot submit a blank form for these. However the email is an optional field as stated on the form, therefore the user does not need to enter this to sign up to become a member.
+
+![](docs/images/usertest-signup.png)
+
+If the password section does not match for both fields, then the user will be presented with a message to state that they must type the same password each time to be able to create the account.
+
+![](docs/images/usertest-error1.png)
+
+If the password is too similar to the username the user will also be displayed with an error message. This is a security feature on the form to ensure the user's account cannot be acessed easily by creating a different and strong password.
+
+![](docs/images/usertest-error2.png)
+
+Once the sign up form fields have been successfully filled out and the user clicks the sign up button, then the user will be taken back to the Hope page and an alert message will be displayed at the top (below the navigation) to indicate that the user is signed is as their 'username' name. The navigation will now be updated to remove Sign Up and Login buttons with the Logout button.
+
+![](docs/images/usertest-nav2.png)
+
+Alternatively for any existing users with an account already created, by selecting the Login button from the button, this will take the user to the Login page. The link is also accessed from the sign up page for existing users. The page shows the Login section, any new users are prompted to go to the sign up page provided from the link. Any existing users are prompted to enter the required details to be able to login. The user is required to enter their username and password which they previously used to create the account. The user also has an option to tick the 'Remeber Me' checkbox.
+
+Once the user has entered the relevant details and clicked the login button to submit the form, they will be taken back to the Home page and an alert will be displayed at the top of the page (below the navigation) to notify the user that they have logged in successfully. The navigation bar will be changed once logged in as described above in a previous point.
+
+Logged in users have the option to Logout from their account by selecting the Logout button from the navigation. By selecting the Logout button this will take the user to the Logout page. A message prompts the user to confirm if they wish to sign out. Selecting the sign out button will confirm this choice and the user will be taken back to the Home page, and an alter will be displayed to confirm that the user has signed out. Users who do not wish to logout can click back to the Home page from the navigation (or any other page) to undo this action.
+
+![](docs/images/usertest-signout.png)
+
+
+Users with an account that are logged in have the option to add comments and like posts on the post detail page once a post is selected.
+
+The main section of the post post is exactly the same for logged in users as is for users who are not logged in. The post title, author, time and date and image are displayed at the top. Then further down is the main post body. At the end of the section, there is a like counter and comment counter displayed which will show how many users have liked the post and how many comments does a post have.
+
+![](docs/images/usertest-post.png)
+
+With likes and comments:
+
+![](docs/images/usertest-likes1.png)
+
+With no likes and comments:
+
+![](docs/images/usertest-likes2.png)
+
+After the main post post, logged in users will be displayed with the comments section (on the left) where any posted comments which have been approved by the admin can be viewed, and the comment box (on the right) where the user can submit a comment. The comment box is only available for logged in users, whereas the comments section is visible to both logged in users and users not logged in.
+
+Logged in user view:
+
+![](docs/images/usertest-post2.png)
+
+Generic view for non-members:
+
+![](docs/images/usertest-post3.png)
+
+The comment box provides details to the user as to who they are posting as which corresponds to the username they have logged in with. Further down is the main comment body section where the user is able to enter a comment. Once clicking the submit button, the user will be presented with an alert message to state that the comment has been sent for approval. Only the admin can approve comments. Once the admin has approved the comment, this can now be viewed on the post post.
+
+![](docs/images/usertest-comment.png)
+
+![](docs/images/usertest-comment2.png)
+
+The logged in user is also able to like a post by clicking the heart icon, this will increase the like count by 1. Alternatively, the user can also unlike the post by clicking on the heart icon again which will decrease the count by 1.
+
+The following user stories have been achieved from this section:
+
+* As a Site User I can register an account so that I can comment and like
+* As a Site User I can like or unlike a post so that I can interact with the content
+* As a Site User I can leave comments on a post so that I can be involved in the conversation
+* As a Site User/Admin I can view comments on an individual post so that I can read the conversation
+* As a Site User/Admin I can view the number of likes on each post so that I can see which is the most popular or viral
