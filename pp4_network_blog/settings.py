@@ -33,7 +33,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['*', 'pp4-network-blog-45c9aa617027.herokuapp.com', '8000-etherealshe-pp4networkb-dwivu90u3p0.ws-eu106.gitpod.io', 'localhost']
+ALLOWED_HOSTS = ['*', 'pp4-network-blog-45c9aa617027.herokuapp.com', '8000-etherealshe-pp4networkb-dwivu90u3p0.ws-eu106.gitpod.io', 'localhost', 'www.ui.dev/amiresponsive']
 
 # Application definition
 
