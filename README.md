@@ -1,39 +1,398 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+h# Network Blog
 
-Welcome,
+[View published site on Heroku](pp4-network-blog-45c9aa617027.herokuapp.com).
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+I could not be able to generate the image from [Am I Responsive](ui.dev/amiresponsive), as workaround I generated the four images below taking screenshots from my devices (from top to bottom): Desktop, Laptop, Tablet and Phone.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
 
-## Codeanywhere Reminders
+Desktop (ultra-wide screen)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+![](docs/images/desktop.jpg)
 
-`python3 -m http.server`
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+Laptop
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+![](docs/images/laptop.jpg)
 
-`http_server`
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Tablet
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+![](docs/images/tablet.jpg)
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+Phone
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+![](docs/images/phone.jpg)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
----
 
-Happy coding!
+## Project Overview
+
+Network Blog is a website that aims to provide a blog-style website for various networking topics which user can view and interact with via comments and likes by signing up and creating an account or logging into and existing one. This site has been created as part of my Portfolio Project 4 for Code Institute Diploma in Full Stack Software Development (E-commerce Applications).
+
+## Table of Contents
+
+1. [User Experience (UX)](#ux)
+    * [Strategy](#strategy)
+        * [Project Goals](#project-goals)
+        * [User Stories](#user-stories)
+    * [Scope](#scope)
+    * [Design](#design)
+        * [Colours](#colours)
+        * [Typography](#typography)
+        * [Imagery](#imagery)
+    * [Skeleton](#skeleton)
+        * [Wireframes](#wireframes)
+        * [Database](#database)
+2. [Features](#features)
+    * [Current Features](#current-features)
+    * [Future Features](#future-features)
+3. [Technologies Used](#tech-used)
+4. [Testing](#testing)
+    * [User Stories Testing](#user-testing)
+    * [Validation Testing](#validation-testing)
+    * [Automated Testing](#auto-testing)
+    * [Known Issues and Resolutions](#issues)
+5. [Deployment](#deployment)
+6. [Credits](#credits)
+7. [Acknowledgements](#acknowledgements)
+
+## User Experience (UX) <a name="ux"></a>
+
+## Strategy <a name="strategy"></a>
+
+### Project Goals <a name="project-goals"></a>
+
+The main business goal for Network Blog is to provide users with a blog-style website with various topics, covering different technologies, accessible for the user to view. The user can create an account to be able to further interact with these blog posts via likes and adding comments.
+
+The main target audience for this website are other network engineers who enjoy new challenges and study new technologies, experiencing a wide type of topics and following case studies, laboratories and configuration discussions, from different levels of knowledge. This is also a website for users to be able to share their comments and reviews about opinions and experiences with the community.
+
+
+### User Stories <a name="user-stories"></a>
+
+* __Site User Goals:__
+
+  * As a Site User I can like or unlike a post so that I can interact with the content.
+  * As a Site User I can leave comments on a post so that I can be involved in the conversation.
+  * As a Site User I can register an account so that I can comment and like.
+  * As a Site User/Admin I can view comments on an individual post so that I can read the conversation.
+  * As a Site User/Admin I can view the number of likes on each post so that I can see which is the most popular or viral.
+  * As a Site User I can click on a post so that I can read the full text.
+  * As a Site User I can view a list of posts so that I can select one to read.
+  * As a Site User I can locate their social media accounts so I can receive updates and see their following and how well they are known and reliable.
+  * As a Site User I can navigate easily through the site and find the relevant information with ease.
+  * As a Site User I can learn more about the site the purpose of the web app.
+  * As a Site User I can search keywords for specific posts.
+  * As a Site User I can contact the site owner regarding any feedback or queries.
+
+
+* __Site Owner Goals:__
+
+  * As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments.
+  * As a Site Admin I can create draft posts so that I can finish writing the content later.
+  * As a Site Admin I can create, read, update and delete posts so that I can manage my blog content.
+  * As a Site User/Admin I can view comments on an individual post so that I can read the conversation.
+  * As a Site User/Admin I can view the number of likes on each post so that I can see which is the most popular or viral.
+  * As a Site Admin I can prevent unauthorised users from having access so that they cannot access admin content or other users' profiles.
+
+
+## Scope <a name="scope"></a>
+
+To achieve the strategy goals, I want to implement the following features:
+
+* A navigation bar fixed at the top of the screen which will allow the user to easily navigate and find the relevant sections.
+* A Home section which will allow the user to find out about the website and view posts.
+* An About Me page to inform the user about this website.
+* A Login page for existing users to access their account to allow to like and add comments.
+* A Register/Signup page to allow new users to create an account.
+* A Blog post page to view the selected post in more detail for the posts and add comments/like the post.
+* A Search bar to allow users to enter specific keywords to be able to locate desired posts.
+* A Footer located at the bottom of the website which allows the user to access social media links.
+* A fully responsive design that will work on different devices including desktop, tablets, and mobile devices, allowing users to access the site anytime and anywhere.
+* A Contact page to allow users to leave any feedback or queries.
+* Full CRUD functionality for Admin to allow to Create, Read, Update and Delete posts.
+
+
+## Design <a name="design"></a>
+
+### Colours <a name="colours"></a>
+
+I have used white for the overall background colour for the website, accompanied by black and #212529 for the header and footer to notably distinguish this from the main content.
+
+For the text, black has been used against the white background and white has been used against the black header and footer. This opposite contrast has been chosen for ease of visibility, so users are able to read the text without any additional difficulty.
+
+In addition, cornflowerblue colour has been used as a complementing accent to the website for the logo and hover links without causing any distractions to the user viewing the website.
+
+
+### Typography <a name="typography"></a>
+
+The fonts were obtained from [Google Fonts](https://fonts.google.com/).
+
+More specifically, Roboto and Lato fonts were used for this project, they are very similar and work very well togheter, giving the user an organic view of the page text.
+
+For my logo text I have used Roboto.
+
+For the heading text I have used Lato.
+
+I have avoided using overly stylised fonts, which can be difficult to read for users, therefore ensuring the website is more accessible to users with visual impairments.
+
+In the event the font fails to load, I have used sans-serif as a back-up font.
+
+
+### Imagery <a name="imagery"></a>
+
+Images are obtained from AI Image Creator Microsoft Bing with Dall-E 3 integration [Microsoft Bing](https://www.bing.com/images/create) website.
+
+I have used imagery appropriate to the website’s content to provide a more visual experience to the user.
+
+All the images used in this project were generated by me.
+
+
+## Skeleton <a name="skeleton"></a>
+
+### Wireframes <a name="wireframes"></a>
+
+Wireframes were created using [Lucidchart](https://www.lucidchart.com/).
+
+The wireframes have examples of desktop, tablet, and mobile phone displays.
+
+* [Home](docs/images/home.png)
+* [About Me](docs/images/about-me.png)
+* [Blog Post](docs/images/blog-post.png)
+* [Register](docs/images/register.png)
+* [Login](docs/images/login.png)
+
+Overall, the finished project design is similar to what I had originally intended to create as per my wireframes. However, there are some different choices I have made for the end website such as:
+
+* I have decided to remove the 'posts' section from the nav as per the original wireframes. The original intention was that a user can click on this and will be taken to a new page where they are able to view all the posted posts. However, this was a redundant idea as the posts were already displayed on the 'Home' page. Therefore, for final submission I opted for a search bar to replace this. The user instead can utilise the search bar to locate specific posts with the use of keywords which in return will present posts (if any found).
+
+* There are also some minor differences on the blog post section with the arrangement of the content.
+
+* A Contact Me page has been added which was not part of the original wireframe mockups.
+
+
+### Database <a name="database"></a>
+
+A relational database was used for this project.
+
+During production SQLite/Postgres was used as the main database, and for deployment all data was migrated to Heroku Postgres.
+
+Please note that for testing purposes SQLite database was used. In the settings.py code was added to allow for the databases to be swtiched between SQLite for testing and Postgres for regular production. When DEVELOPMENT = True, then the SQLite database will be used for testing, and when this is set to False, then the Postgres database will be in use.
+
+![](docs/images/db-scheme.png)
+
+The database diagram was created using [dbdiagram.io](https://dbdiagram.io/home).
+
+The database contains the following models, once of which is a custom model - Contact.
+
+* __Post__: Contains information about posts submitted by admin, has a relationship with the User model.
+* __Comment__: Contains information about comments submitted by the user, has a relationship with the Post model.
+* __Contact__: Contains information about form submitted by a site visitor, has no external relationships with other models.
+* __User__: Contains information about the user, this is a Django built-in model, has a relationship with the Post model.
+
+
+## Features <a name="features"></a>
+
+### Current Features <a name="current-features"></a>
+
+For this project I opted for a website with different pages accessed by clicking the nav links, this is fully responsive and consists of a header, footer and the following main sections; Home, Blog Post, Sign Up, Login, Search, About Me and Contact Me.
+
+__Navigation__:
+
+* This feature is present on all the pages/sections and is fixed to the top.
+* The header section has a fully responsive navigation bar which consists of the logo, located on the left-hand side.
+* The navigation buttons for Home, About Me, Sign Up, Login (located left-hand side after the logo) and a Search bar (located on the right-hand side).
+* Style has been applied to the logo and buttons on the left-hand side so the user is able to hover over these to signify that the links can be clicked.
+* The Search bar has placeholder text to indicate to the user that they can enter text in the box provided.
+* Style has also been applied to the search button next to the input box to indicate to the user that this has been selected and can be clicked.
+
+__Home__:
+
+* This is the default page displayed when the user accesses the website.
+* This page can also be viewed by clicking the Network Blog logo or the home button from the navigation.
+* An introductory message displayed to the user.
+* Blog posts displayed (max of 6) per page.
+* There is a 'Next' button that allows user to click and navigate to the next page to view more posts.
+* Alternatively 'Prev' button can be clicked to return a page back.
+* Blog posts are displayed from most recent to oldest.
+* Each post is displayed in a card style with an image, author, date, title and like count.
+* Style has been applied so the user can hover over the text for the posts which will underline to indicate that this can be selected.
+* Selecting the clickable text will take the user to the 'Blog Posts' page to display the full content of the post.
+
+__About Me__:
+
+* User can access this section by clicking the 'About' button from the navigation.
+* User is able to scroll further down the page and access the text which provides more detail about the website and it's purpose.
+* For new users, a sign up link is also within the text which will take them to the 'Sign Up' page and allow the user to create an account.
+
+__Blog Post__:
+
+* Accessed once the user selects a post post from the 'Home' or 'Search' page.
+* post title and image displayed at the top (image is not displayed on smaller devices).
+* Content is then followed by the ingredient list and method steps.
+* Further below is the comment section which users can view even if not logged in.
+* Comment section is available and displayed for logged in users who can submit a comment.
+* This is then sent for approval which is a feature only the Admin can access.
+* Alert is displayed to indicate the comment has been sent for approval.
+* Approved comments can be viewed on the post.
+
+__Sign Up__:
+
+* Accessed from the navigation bar by selecting the 'Sign Up' button.
+* Once selected, the user is taken to the 'Sign Up' page.
+* New users are prompted to enter a username, email (optional), password and password again to confirm.
+* All fields apart from the email (optional) are required for the user to be able to create an account, otherwise an error is displayed.
+* Upon successful creation the user is then able to login to the account.
+* Alert is displayed to indicate that the user has signed in.
+* Existing users are provided with the sign in link to take them to the 'Login' page.
+
+__Login__:
+
+* Accessed from the navigation bar by selecting the 'Login' button.
+* Once selected, the user is taken to the 'Login' page.
+* Existing users can enter their username and password and click the login button.
+* Upon successful login, user is taken to the 'Home' page.
+* Alert is displayed to indicate that the user has signed in.
+* Incorrect username and password will faily to log the user into their account and a message will be displayes on the 'Login' page to indicate this.
+* New users are provided with the register link to take them to the 'Sign Up' page to create an account.
+
+__Logout__:
+
+* Option only available to users who are currently logged in.
+* Accessed from the navigation bar by selecting the 'Logout' button.
+* Once selected, user will be taken to the 'Sign Out' page to confirm that they wish to sign out from their account.
+* User can select the sign out button option which will successfully sign out the user from their account and return them to the home page.
+* Alert added to indicate that the user has signed out.
+
+__Search__:
+
+* Accessed from the navigation bar in the top right-hand corner.
+* Placeholder text added to indicate to the user that text can be entered in the input box.
+* User cannot submit an empty search and user has to enter a max of 2 characters otherwise an error is displayed.
+* User is able to click the search button once the requirements are met (as stated above), this will take the user to the 'Search' page.
+* User is able to scroll down and view the displayed results of the posts which match the keywords entered.
+* Prior to the search results, the user is displayed with the keyword searched and below the results are displayed.
+* For any successful matches display the post card (same as the ones on the 'Home' page), the user can click this and be taken to the post page.
+* For any unsuccessful matches, the user is displayed with a message to state that no results have been found for this keyword.
+
+__Footer__:
+
+* This feature is present on all the pages/sections and is fixed to the top.
+* Social media links can be accessed by the user.
+* Hover style applied to signal to the user which link they are selecting and opening.
+* Links open in a new tab so the user is not taken away from the main website and can easily return.
+
+__Contact__:
+
+* Accessed once the user clicks the 'Me' link from the navigation.
+* User is displayed with a contact form to fill out with the required fields of email, subject and message.
+* Form can be submitted via the 'Send' button upon which the user will receive a confirmation page to indicate message has been submitted successfully.
+* Admin can view the form submitted by the user in the admin only section to view the message.
+
+__Features Exclusive to Admin__:
+
+* Only the Admin can approve and delete user comments.
+* Only the Admin can create, update and delete posts.
+
+
+### Future Features <a name="future-features"></a>
+
+Due to hard time constraints, I was unable to apply additional features, in the future I would like to implement the following:
+
+* Allow users to edit/delete their own posted comments. Verification would need to be added to ensure that the user is only able to edit/delete their own comments and be restricted from amending any other users' comments.
+
+* Allow users to create their own posts, this would go to Admin for approval to ensure that the content is consistent and appropriate to the website.
+
+* Add a Lab section on the blog, providing scenarios and startup-config for the devices to test for every laboratory, allowing the users to challenge their skills and knowledge.
+
+* Add a tick list on the blog lab section for the posts. This will allow users to tick off against each of the lab task to signify which items the user completed and which they do not.
+
+* Add a 404 page.
+
+## Technologies Used <a name="tech-used"></a>
+
+For this project the main languages used are __HTML5__, __CSS3__, __JavaScript__, __Python__, __Django__ and __Heroku Postgres__.
+
+I have also utilised the following frameworks, libraries, and tools:
+
+* [Bootstrap v5.1.3](https://getbootstrap.com/):
+    * Bootstrap has been used for overall responsiveness of the website and for the layout with the addition of select classes.
+* [GitPod](https://www.gitpod.io/):
+    * I used GitPod as the IDE for this project and Git has been used for Version Control.
+* [GitHub](https://www.github.com/):
+    * GitHub has been used to create a repository to host the project and receive updated commits from GitPod.
+* [Lucidchart](https://lucidchart.com/):
+    * I used Lucidchart to create the wireframe for the website for the basic structure and layout.
+* [dbdiagram](https://dbdiagram.io/home):
+    * I used dbdiagram to create the database diagram model for the website.
+* [Google Fonts](https://getbootstrap.com/):
+    * I have used Google Fonts to import fonts for styling purposes for this project.
+* [Font Awesome](https://fontawesome.com/):
+    * Font Awesome was used to apply icons in the Footer sections.
+* [GIMP v2.10](https://www.gimp.org/):
+    * GIMP image manipulator program was used to edit the favicon used this project.
+* [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools):
+    * Chrome Dev Tools was used to test the site, assist with debugging issues and run reports from Lighthouse.
+* [W3C Markup Validation Service](https://validator.w3.org/):
+    * The W3C Markup Validation Service was used to validate the HTML document for this project and to identify any issues with the code.
+* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/):
+    * The W3C CSS Validation Service was used to validate the CSS document for this project and to identify any issues with the code.
+* [JSHint Validation Service](https://jshint.com/):
+    * The JSHint Validation Service was used to validate the JavaScript document for this project and to identify any issues with the code.
+* [PEP8 Online Validation Service](http://pep8online.com/):
+    * The PEP8 Online Validation Service was used to validate the Python document for this project and to identify any issues with the code.
+* [Heroku](https://www.heroku.com/):
+    * Heroku has been used to create a repository to host the project and receive updated commits from GitPod.
+* [Django](https://docs.djangoproject.com/en/3.1/):
+    * Django was used as the main framework to build this project.
+* [Cloudinary](https://cloudinary.com/):
+    * Cloudinary was used to store all media and static files for this project.
+* [Am I Responsive](http://ami.responsivedesign.is/):
+    * Am I Responsive was used to create the header image for the README file.
+* [Python](https://www.python.org/):
+    * Various Python modules were used to build this project as detailed below and as seen in the requirements.txt file.
+
+## Testing <a name="testing"></a>
+
+Testing for this project was completed manually and some auto unit testing was also implemented.
+
+### User Stories Testing <a name="user-testing"></a>
+
+From the Home page, the user is presented with the navigation which consists of the Network Blog logo, Home button, About button, Sign Up button, Login button, Contact Us button and on the right-hand side is the search bar with the Search button. Each of these buttons are operational, the user can click or utilise. The following actions will occur once the user clicks the following buttons:
+
+* Network Blog Name -> Defaults to the Home page, user can click this to take them back to the Home page
+* Home button -> Links to the Home page, user can click this to take them back to the Home page
+* About Me button -> Links to the About Me page, user can click this to take them to the About Me page
+* Sign Up button -> Links to the Sign Up page, user can click this to take them to the Sign Up page
+* Login button -> Links to the Login page, user can click this to take them to the Login page
+* Contact Me button -> Links to the Contact Me page, user can click this to take them to the Contact Me page
+* Search button -> Links to the Search page, user can only click this once the search criteria has been met (cannot be blank and a minimum of 2 characters), this will then allow for the form to be submitted
+
+The user can easily access the navigation as this is fixed at the top of the page and is accessible from all the pages of the website. On desktop view the navigation can be viewed in full but in mobile view this then collapses the post images are not showed.
+
+![](docs/images/usertest-nav.png)
+
+The main section of the Home page displays the posted posts, there is a max of 6 posts displayed per page. The user can navigate between the post pages by clicking Next button to go to the next page to view more posts or clicking Prev button to go to the previous page. The posts are displayed in date order, the most recent posts are displayed first and the older posts will be displayed at the very end (or on a different page if exceeding 6 posts per page). Each post is presented with a card style with an imagine, the author, post title, post description, posted date and time, and a like count. The user can select any post from the available posts by clicking the post title or description. This action will take the user to the post post page of that particular post.
+
+![](docs/images/usertest-home1.png)
+
+![](docs/images/usertest-home2.png)
+
+At the bottom of the page is the footer. The footer is present and can be accessed from any page of the website. The footer provides social media links to the user which they are able to click to take them to the respective social media platforms. The social media links open in a new tab once clicked, this provides for a better user experience as the original website is not lost and the user is able to easily navigate back from where they left off. Further down from there is the copyright text for the website.
+
+![](docs/images/usertest-footer.png)
+
+The following user stories have been achieved from this section:
+
+* As a Site User I can click on a post so that I can read the full text.
+* As a Site User I can view a list of posts so that I can select one to read.
+* As a Site User I can locate their social media accounts so I can receive updates and see their following and how well they are known and reliable.
+* As a Site User I can navigate easily through the site and find the relevant information with ease.
+
+Selecting the About Me button from the navigation will take the user to the About Me page. The page is simple and it has a section with text the user is able to read. From here the user is able to find out more information about the website and the aim of Network Blog.
+
+![](docs/images/usertest-about.png)
+
+The following user stories have been achieved from this section:
+
+* As a Site User I can learn more about the site the purpose of the web app.
