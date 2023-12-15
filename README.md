@@ -1,6 +1,6 @@
 # Network Blog
 
-[View published site on Heroku](pp4-network-blog-45c9aa617027.herokuapp.com).
+[View published site on Heroku](https://pp4-network-blog-45c9aa617027.herokuapp.com/).
 
 ![](docs/images/mockup.png)
 
