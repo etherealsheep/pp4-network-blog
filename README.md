@@ -4,7 +4,7 @@
 
 ![](docs/images/mockup.png)
 
-Image from [Am I Responsive](ui.dev/amiresponsive)
+Image from [Am I Responsive](https://ui.dev/amiresponsive)
 
 ## Project Overview
 
