@@ -140,11 +140,7 @@ The wireframes have examples of desktop, tablet, and mobile phone displays.
 * [Register](docs/images/register.png)
 * [Login](docs/images/login.png)
 
-Overall, the finished project design is similar to what I had originally intended to create as per my wireframes. However, there are some different choices I have made for the end website such as:
-
-* I have decided to remove the 'posts' section from the nav as per the original wireframes. The original intention was that a user can click on this and will be taken to a new page where they are able to view all the posted posts. However, this was a redundant idea as the posts were already displayed on the 'Home' page. Therefore, for final submission I opted for a search bar to replace this. The user instead can utilise the search bar to locate specific posts with the use of keywords which in return will present posts (if any found).
-
-* There are also some minor differences on the blog post section with the arrangement of the content.
+Overall, the finished project design is similar to what I had originally intended to create as per my wireframes. However, there are some minor differences on the blog post section with the arrangement of the content.
 
 
 ### Database <a name="database"></a>
