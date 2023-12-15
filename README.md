@@ -255,7 +255,7 @@ __Footer__:
 
 __Contact__:
 
-* Accessed once the user clicks the 'Me' link from the navigation.
+* Accessed once the user clicks the 'About Me' link from the navigation.
 * User is displayed with a contact form to fill out with the required fields of email, subject and message.
 * Form can be submitted via the 'Send' button upon which the user will receive a confirmation page to indicate message has been submitted successfully.
 * Admin can view the form submitted by the user in the admin only section to view the message.
@@ -338,6 +338,8 @@ From the Home page, the user is presented with the navigation which consists of 
 * Login button -> Links to the Login page, user can click this to take them to the Login page
 * Contact Me button -> Links to the Contact Me page, user can click this to take them to the Contact Me page
 * Search button -> Links to the Search page, user can only click this once the search criteria has been met (cannot be blank and a minimum of 2 characters), this will then allow for the form to be submitted
+
+![](docs/images/search-min-char.png)
 
 The user can easily access the navigation as this is fixed at the top of the page and is accessible from all the pages of the website. On desktop view the navigation can be viewed in full but in mobile view this then collapses the post images are not showed.
 
@@ -554,20 +556,6 @@ Further testing was completed importing the Django TestCase. The test files can 
 
 Please note that for testing purposes SQLite database was used. In the settings.py code was added to allow for the databases to be swtiched between SQLite for testing and Postgres for regular production. When DEVELOPMENT = True, then the SQLite database will be used for testing, and when this is set to False, then the Postgres database will be in use.
 
-The [Coverage](https://pypi.org/project/coverage/) was used to assist with automated testing to check the percentage of the project code that was covered with automated testing. The test provided an overall coverage of 76%.
-
-To generate your own coverage report:
-
-* Install the package using pip install coverage
-* Run coverage run manage.py test
-* Then coverage html to generate the report
-* The report can be viewed in a browser by opening the index.html file from inside the htmlcov folder
-
-The remaining untested code was tested manually for this project as detailed in the above sections.
-
-In addition to completing automated testing for this project, the Travis CI for Continuous Integration was used to further test. However, due to changes with the Travis CI policy the free package was no longer accessible, therefore full testing could not be completed as expected.
-
-
 ## Deployment <a name="deployment"></a>
 
 The project was developed using GitPod and was deployed via the GitHub repository to Heroku.
@@ -601,15 +589,17 @@ Please note as of 18/04/2022, Heroku no longer allows deployment from GitHub and
 ### Content
 
 Posts are created by me and all the content are created in a Laboratory environment with virtual devices using network emulator EVE-NG.
+Posts descriptions in the core text are taken partially from Wikipedia:
+- https://en.wikipedia.org/wiki/Enhanced_Interior_Gateway_Routing_Protocol
+- https://en.wikipedia.org/wiki/Open_Shortest_Path_First
+
 Due to hard time constraints I did not populated all the posts with the article I was suppose to do initially.
 
 ### Media
 
 Images are obtained from AI Image Creator Microsoft Bing with Dall-E 3 integration [Microsoft Bing](https://www.bing.com/images/create) website.
 
-Favicon:
-
-Generic Router Template
+Favicon: Generic Router Template
 
 
 
