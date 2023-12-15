@@ -554,6 +554,8 @@ Further testing was completed importing the Django TestCase. The test files can 
 * test_urls.py
 * test_views.py
 
+![](docs/images/usertest-passed.png)
+
 Please note that for testing purposes SQLite database was used. In the settings.py code was added to allow for the databases to be swtiched between SQLite for testing and Postgres for regular production. When DEVELOPMENT = True, then the SQLite database will be used for testing, and when this is set to False, then the Postgres database will be in use.
 
 ## Deployment <a name="deployment"></a>
