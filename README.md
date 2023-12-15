@@ -1,30 +1,10 @@
-h# Network Blog
+# Network Blog
 
 [View published site on Heroku](pp4-network-blog-45c9aa617027.herokuapp.com).
 
-I could not be able to generate the image from [Am I Responsive](ui.dev/amiresponsive), as workaround I generated the four images below taking screenshots from my devices (from top to bottom): Desktop, Laptop, Tablet and Phone.
+![](docs/images/mockup.png)
 
-
-Desktop (ultra-wide screen)
-
-![](docs/images/desktop.jpg)
-
-
-Laptop
-
-![](docs/images/laptop.jpg)
-
-
-Tablet
-
-![](docs/images/tablet.jpg)
-
-
-Phone
-
-![](docs/images/phone.jpg)
-
-
+Image from [Am I Responsive](ui.dev/amiresponsive)
 
 ## Project Overview
 
@@ -50,9 +30,7 @@ Network Blog is a website that aims to provide a blog-style website for various 
 3. [Technologies Used](#tech-used)
 4. [Testing](#testing)
     * [User Stories Testing](#user-testing)
-    * [Validation Testing](#validation-testing)
     * [Automated Testing](#auto-testing)
-    * [Known Issues and Resolutions](#issues)
 5. [Deployment](#deployment)
 6. [Credits](#credits)
 7. [Acknowledgements](#acknowledgements)
@@ -168,8 +146,6 @@ Overall, the finished project design is similar to what I had originally intende
 
 * There are also some minor differences on the blog post section with the arrangement of the content.
 
-* A Contact Me page has been added which was not part of the original wireframe mockups.
-
 
 ### Database <a name="database"></a>
 
@@ -201,7 +177,7 @@ __Navigation__:
 
 * This feature is present on all the pages/sections and is fixed to the top.
 * The header section has a fully responsive navigation bar which consists of the logo, located on the left-hand side.
-* The navigation buttons for Home, About Me, Sign Up, Login (located left-hand side after the logo) and a Search bar (located on the right-hand side).
+* The navigation buttons for Home, Sign Up, Login, About Me and a Search bar (located on the right-hand side).
 * Style has been applied to the logo and buttons on the left-hand side so the user is able to hover over these to signify that the links can be clicked.
 * The Search bar has placeholder text to indicate to the user that they can enter text in the box provided.
 * Style has also been applied to the search button next to the input box to indicate to the user that this has been selected and can be clicked.
@@ -221,15 +197,14 @@ __Home__:
 
 __About Me__:
 
-* User can access this section by clicking the 'About' button from the navigation.
+* User can access this section by clicking the 'About Me' button from the navigation.
 * User is able to scroll further down the page and access the text which provides more detail about the website and it's purpose.
-* For new users, a sign up link is also within the text which will take them to the 'Sign Up' page and allow the user to create an account.
 
 __Blog Post__:
 
 * Accessed once the user selects a post post from the 'Home' or 'Search' page.
 * post title and image displayed at the top (image is not displayed on smaller devices).
-* Content is then followed by the ingredient list and method steps.
+* Content is then followed.
 * Further below is the comment section which users can view even if not logged in.
 * Comment section is available and displayed for logged in users who can submit a comment.
 * This is then sent for approval which is a feature only the Admin can access.
@@ -358,7 +333,7 @@ Testing for this project was completed manually and some auto unit testing was a
 
 ### User Stories Testing <a name="user-testing"></a>
 
-From the Home page, the user is presented with the navigation which consists of the Network Blog logo, Home button, About button, Sign Up button, Login button, Contact Us button and on the right-hand side is the search bar with the Search button. Each of these buttons are operational, the user can click or utilise. The following actions will occur once the user clicks the following buttons:
+From the Home page, the user is presented with the navigation which consists of the Network Blog name, Home button, Sign Up button, Login button, About Me button, Contact Me button and on the right-hand side is the search bar with the Search button. Each of these buttons are operational, the user can click or utilise. The following actions will occur once the user clicks the following buttons:
 
 * Network Blog Name -> Defaults to the Home page, user can click this to take them back to the Home page
 * Home button -> Links to the Home page, user can click this to take them back to the Home page
@@ -499,3 +474,160 @@ The side admin will then be able to view the contact messages in the admin only 
 The following user stories have been achieved from this section:
 
 * As a Site User I can contact the site owner regarding any feedback or queries
+
+__Admin Only User Story Testing__
+
+This section tests the user stories for the Admin only functions of the website.
+
+The admin section is accessed by entering '/admin' at the end of the url for the website. This displayed the login page for the admin from which they can login.
+
+The admin username for this project is: **sonj79**
+
+![](docs/images/usertest-admin.png)
+
+The site admin has various actions available to be able to manage the website such as:
+
+* Delete users
+* Create/edit/delete posts and drafts
+* Approve and delete comments
+
+From the home section of the admin page, by selecting the Users link under 'Authentication and Authorization' the admin can view the lists of users currently signed up to the website. The admin also has the permission to delete the users by selecting the username and from the drop down selecting the delete user option.
+
+From the home section, the admin can also view comments added by users some of which are pending approval. This is accessed from the Comments link under the 'Blog' section. Approved comments are indicated with a green tick under the Approved column. Comments pending approval have the red cross icon. To approve the comment the admin has to tick the unapproved comment from the list, then from the action drop down select the 'Approve comments' option. By clicking Go button this will proceed to carry out the action to approve the selected comment. Once the comment has been approved the red cross icon will now become a green tick icon to indicate that the comment has now been approved. The approved comment can also be viewed on the website now.
+
+![](docs/images/usertest-admin2.png)
+
+![](docs/images/usertest-admin3.png)
+
+Alternatively selecting the 'Delete selected comments' action will proceed to delete the comment selected. Users will also no longer be able to view the comment on the website.
+
+![](docs/images/usertest-admin10.png)
+
+![](docs/images/usertest-admin11.png)
+
+From the home section, the admin can also view the posts on the website, create new posts and edit/delete any existing ones. This can be accessed from the Posts link under the 'Blog' section. By selecting this link, this will display all the current posts submitted on the website.
+
+![](docs/images/usertest-admin4.png)
+
+The admin can delete any of these posts by selecting the 'Delete selected posts' action from the Action drop down.
+
+The admin can also click on an existing posts by selecting the post tile to view the editor. From this section the admin can edit the posts content, and also has the option to delete the post or to save the changes.
+
+![](docs/images/usertest-admin5.png)
+
+The admin can also create new posts by selecting the Add Post button. This will open up the editor page which will allow the fields to be populated. The status of the post can also be toggled between Draft or Published. The Published posts can then be viewed on the website, whereas Draft posts cannot.
+
+The admin also has the capability to create, edit and delete posts via the front end of the website.
+
+When logged in as admin, from the navigation the admin has an additional link available 'Add Post'.
+
+![](docs/images/usertest-admin6.png)
+
+Selecting the 'Add Post' link will direct the admin to add a post page. From here the admin can enter the relevant details on the form to submit the form to add a new post to the website. The admin can select whether to create this post as a draft or publish this straight away. Any published posts can be viewed on the home page, and any draft posts can be accessed in the admin section and approved later once editing is completed.
+
+![](docs/images/usertest-admin7.png)
+
+Submitting the form will direct the admin to the home page with a success message.
+
+The admin also has the capability to edit or delete posts. These are displayed after the posts are searched using the Search button. If delete option is selected then the post is deleted from the database and this is confirmed via an alert message.
+
+![](docs/images/usertest-admin8.png)
+
+By selecting the edit option, the admin is directed to the edit post page which allows for any changes to be made and saved.
+
+![](docs/images/usertest-admin9.png)
+
+These particular admin only permissions cannot be accessed by any other users, and users cannot edit or delete comments or posts or access another users account.
+
+The following user stories have been achieved from this section:
+
+* As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments
+* As a Site Admin I can create draft posts so that I can finish writing the content later
+* As a Site Admin I can create, read, update and delete posts so that I can manage my blog content
+* As a Site Admin I can prevent unauthorised users from having access so that they cannot access admin content or other users' profiles
+
+
+### Automated Testing <a name="auto-testing"></a>
+
+Further testing was completed importing the Django TestCase. The test files can be located in the blog > tests folder for the project, this consists of the following files:
+
+* test_forms.py
+* test_models.py
+* test_urls.py
+* test_views.py
+
+Please note that for testing purposes SQLite database was used. In the settings.py code was added to allow for the databases to be swtiched between SQLite for testing and Postgres for regular production. When DEVELOPMENT = True, then the SQLite database will be used for testing, and when this is set to False, then the Postgres database will be in use.
+
+The [Coverage](https://pypi.org/project/coverage/) was used to assist with automated testing to check the percentage of the project code that was covered with automated testing. The test provided an overall coverage of 76%.
+
+To generate your own coverage report:
+
+* Install the package using pip install coverage
+* Run coverage run manage.py test
+* Then coverage html to generate the report
+* The report can be viewed in a browser by opening the index.html file from inside the htmlcov folder
+
+The remaining untested code was tested manually for this project as detailed in the above sections.
+
+In addition to completing automated testing for this project, the Travis CI for Continuous Integration was used to further test. However, due to changes with the Travis CI policy the free package was no longer accessible, therefore full testing could not be completed as expected.
+
+
+## Deployment <a name="deployment"></a>
+
+The project was developed using GitPod and was deployed via the GitHub repository to Heroku.
+
+The following steps were followed to deploy this project:
+
+1. From the Heroku dashboard, select 'New' in the top right-hand corner.
+2. Click 'Create new app'.
+3. Enter the app name and choose region as Europe.
+4. Click 'Create app'.
+5. Select the 'Settings' tab, and scroll down to 'Buildpacks'.
+6. Add 'Python' and save changes.
+7. Scroll down to 'Config Vars' section, and add the 'KEY' and 'VALUE' for the CLOUDINARY_URL, DATABASE_URL and SECRET_KEY to run the app.
+8. At the top of the page, click on the 'Deploy' section.
+9. Select Github as deployment method.
+10. Select 'Connect to Github', and locate the repository name and click on 'Connect' to link my Heroku app to my Github repository code.
+11. To add the Postgres Database, click on the 'Resources' tab.
+12. Under Add-ons, search for 'Heroku Postgres', click on the search result for this.
+13. Select the 'Hobby Dev-Free' option and click submit order form which will add this to the Add-ons section.
+14. Scroll further down, select 'Enable Automatic Deploys' and then select 'Deploy Branch' to deploy project.
+15. After it has successfully deployed a 'view' button appears on screen and when clicked opens the deployed application.
+
+Please note as of 18/04/2022, Heroku no longer allows deployment from GitHub and is currently under maintenance. As a workaround the following method is used using the GitPod terminal to deploy any further changes to Heroku.
+
+* Run the command heroku login -i and login when prompted. Then run the following command: heroku git:remote -a your_app_name_here and replace your_app_name_here with the name of your Heroku app. This will link the app to your Gitpod terminal.
+* After linking your app to your workspace, you can then deploy new versions of the app by running the command git push heroku main and your app will be deployed to Heroku.
+
+
+## Credits <a name="credits"></a>
+
+### Content
+
+Posts are created by me and all the content are created in a Laboratory environment with virtual devices using network emulator EVE-NG.
+Due to hard time constraints I did not populated all the posts with the article I was suppose to do initially.
+
+### Media
+
+Images are obtained from AI Image Creator Microsoft Bing with Dall-E 3 integration [Microsoft Bing](https://www.bing.com/images/create) website.
+
+Favicon:
+
+Generic Router Template
+
+
+
+### Code
+
+* To build the search functionality for the website, code from the following [YouTube](https://www.youtube.com/watch?v=AGtae4L5BbI) video tutorial was used to assist with this.
+
+* A large part of this project code was used and inspired from the Code Institute's I Think Therefore I Blog walkthrough to be able to build a base skeleton project. Please note some of the borrowed code has been customised by me to fit this project. I have also added my own code for additional functions for the project.
+
+* [Bootstrap](https://getbootstrap.com/) to help with styling and overall responsivness of the website.
+
+* To assist with the unit testing section of the project, Code Institute's Hello Django Testing tutorial section was utilised as well as the following [YouTube](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=1) resource.
+
+
+## Acknowledgements <a name="acknowledgements"></a>
+
+* I would like to thank my family and friends for their support throughout this project and for assisting with the testing stage and providing valuable feedback.
