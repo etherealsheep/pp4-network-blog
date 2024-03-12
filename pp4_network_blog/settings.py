@@ -44,14 +44,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
-    'cloudinary',
+    'cloudinary_storage',
     'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'django_summernote',
+    'cloudinary',
     'blog',
 ]
 
