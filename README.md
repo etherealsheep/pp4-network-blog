@@ -50,28 +50,26 @@ The main target audience for this website are other network engineers who enjoy 
 
 * __Site User Goals:__
 
-  * As a Site User I can like or unlike a post so that I can interact with the content.
-  * As a Site User I can leave comments on a post so that I can be involved in the conversation.
-  * As a Site User I can register an account so that I can comment and like.
-  * As a Site User/Admin I can view comments on an individual post so that I can read the conversation.
-  * As a Site User/Admin I can view the number of likes on each post so that I can see which is the most popular or viral.
-  * As a Site User I can click on a post so that I can read the full text.
-  * As a Site User I can view a list of posts so that I can select one to read.
-  * As a Site User I can locate their social media accounts so I can receive updates and see their following and how well they are known and reliable.
-  * As a Site User I can navigate easily through the site and find the relevant information with ease.
-  * As a Site User I can learn more about the site the purpose of the web app.
-  * As a Site User I can search keywords for specific posts.
-  * As a Site User I can contact the site owner regarding any feedback or queries.
-
+  * As a Site User I can like or unlike a post so that I can interact with the content
+  * As a Site User I can leave comments on a post so that I can be involved in the conversation
+  * As a Site User I can register an account so that I can comment and like
+  * As a Site User/Admin I can view comments on an individual post so that I can read the conversation
+  * As a Site User/Admin I can view the number of likes on each post so that I can see which is the most popular or viral
+  * As a Site User I can click on a post so that I can read the full text
+  * As a Site User I can view a list of posts so that I can select one to read
+  * As a Site User I can navigate easily through the site and find the relevant information with ease
+  * As a Site User I can learn more about the site the purpose of the web app
+  * As a Site User I can search keywords for specific recipes
+  * As a Site User I can contact the site owner regarding any feedback or queries
 
 * __Site Owner Goals:__
 
-  * As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments.
-  * As a Site Admin I can create draft posts so that I can finish writing the content later.
-  * As a Site Admin I can create, read, update and delete posts so that I can manage my blog content.
-  * As a Site User/Admin I can view comments on an individual post so that I can read the conversation.
-  * As a Site User/Admin I can view the number of likes on each post so that I can see which is the most popular or viral.
-  * As a Site Admin I can prevent unauthorised users from having access so that they cannot access admin content or other users' profiles.
+  * As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments
+  * As a Site Admin I can create draft posts so that I can finish writing the content later
+  * As a Site Admin I can create, read, update and delete posts so that I can manage my blog content
+  * As a Site User/Admin I can view comments on an individual post so that I can read the conversation
+  * As a Site User/Admin I can view the number of likes on each post so that I can see which is the most popular or viral
+  * As a Site Admin I can prevent unauthorised users from having access so that they cannot access admin content or other users' profiles
 
 
 ## Scope <a name="scope"></a>
@@ -527,7 +525,7 @@ Selecting the 'Add Post' link will direct the admin to add a post page. From her
 
 Submitting the form will direct the admin to the home page with a success message.
 
-The admin also has the capability to edit or delete posts. These are displayed after the posts are searched using the Search button. If delete option is selected then the post is deleted from the database and this is confirmed via an alert message.
+The admin also has the capability to edit or delete posts. These are displayed on each post on the homepage. If delete option is selected then the post is deleted from the database and this is confirmed via an alert message.
 
 ![](docs/images/usertest-admin8.png)
 
@@ -536,6 +534,10 @@ By selecting the edit option, the admin is directed to the edit post page which 
 ![](docs/images/usertest-admin9.png)
 
 These particular admin only permissions cannot be accessed by any other users, and users cannot edit or delete comments or posts or access another users account.
+
+When a new post is created, a placeholder image is loaded:
+
+![](docs/images/usertest-admin12.png)
 
 The following user stories have been achieved from this section:
 
